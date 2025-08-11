@@ -3,3 +3,11 @@ uvicorn
 httpx
 python-dotenv
 vaderSentiment
+transformers
+torch
+tiktoken
+protobuf
+sentencepiece
+pipeline
+ninja
+cmake

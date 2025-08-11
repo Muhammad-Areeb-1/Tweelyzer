@@ -24,3 +24,4 @@ class TweetResponse(BaseModel):
     author: Optional[Author] = None
     media: Optional[Dict] = None
     sentiment: Optional[Dict[str, float | str]] = None
+    is_claim: Optional[bool] = None

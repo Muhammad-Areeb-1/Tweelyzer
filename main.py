@@ -6,6 +6,7 @@ from extractors.tweet_extractor import extract_tweet_data
 from models.tweet_url import TweetURL
 from models.tweet_response import TweetResponse
 from analyzers.sentiment_analyzer import analyze_sentiment
+from analyzers.claim_detector import detect_claim
 
 app = FastAPI()
 
@@ -15,8 +16,8 @@ async def analyze_tweet(data: TweetURL):
     try:
         tweet = await extract_tweet_data(data.url)
 
-        sentiment = analyze_sentiment(tweet['text'])
-        tweet['sentiment'] = sentiment
+        tweet['sentiment'] = analyze_sentiment(tweet['text'])
+        tweet['is_claim'] = detect_claim(tweet['text'])
         
         return tweet
     except ValueError as exc:

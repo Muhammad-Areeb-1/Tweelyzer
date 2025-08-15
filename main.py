@@ -22,12 +22,3 @@ async def analyze_tweet(data: TweetURL):
         raise HTTPException(status_code=400, detail="Invalid tweet URL format") from exc
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) from e
-
-
-
-@app.get("/debug/google-search")
-async def debug_google_search(q: str, n: int = 5):
-    try:
-        return await google_search(q, num_results=n)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) from e

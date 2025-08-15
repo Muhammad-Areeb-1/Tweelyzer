@@ -11,3 +11,9 @@ sentencepiece
 pipeline
 ninja
 cmake
+google-api-python-client
+trafilatura
+beautifulsoup4
+lxml
+spacy
+pytextrank

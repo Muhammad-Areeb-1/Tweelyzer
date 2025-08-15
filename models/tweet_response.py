@@ -1,6 +1,6 @@
 """Defines the TweetResponse (and Author) model used for validating tweet data."""
 
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from pydantic import BaseModel
 
 class Author(BaseModel):
@@ -25,3 +25,4 @@ class TweetResponse(BaseModel):
     media: Optional[Dict] = None
     sentiment: Optional[Dict[str, float | str]] = None
     is_claim: Optional[bool] = None
+    fact_check: Optional[Any] = None
